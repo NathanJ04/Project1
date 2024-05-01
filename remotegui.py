@@ -19,6 +19,7 @@ class Ui_Dialog(object):
         self.screen_tv.setGeometry(QtCore.QRect(30, 20, 291, 131))
         self.screen_tv.setObjectName("screen_tv")
         self.volume_slider = QtWidgets.QSlider(parent=Dialog)
+        self.volume_slider.setEnabled(False)
         self.volume_slider.setGeometry(QtCore.QRect(50, 160, 251, 31))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -27,6 +28,7 @@ class Ui_Dialog(object):
         self.volume_slider.setSizePolicy(sizePolicy)
         self.volume_slider.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
         self.volume_slider.setTabletTracking(False)
+        self.volume_slider.setFocusPolicy(QtCore.Qt.FocusPolicy.NoFocus)
         self.volume_slider.setContextMenuPolicy(QtCore.Qt.ContextMenuPolicy.DefaultContextMenu)
         self.volume_slider.setAcceptDrops(False)
         self.volume_slider.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
@@ -35,6 +37,7 @@ class Ui_Dialog(object):
         self.volume_slider.setMaximum(10)
         self.volume_slider.setProperty("value", 0)
         self.volume_slider.setSliderPosition(0)
+        self.volume_slider.setTracking(True)
         self.volume_slider.setOrientation(QtCore.Qt.Orientation.Horizontal)
         self.volume_slider.setInvertedAppearance(False)
         self.volume_slider.setInvertedControls(False)
@@ -45,7 +48,7 @@ class Ui_Dialog(object):
         self.power_button.setGeometry(QtCore.QRect(20, 210, 31, 31))
         self.power_button.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("power-button.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("../OneDrive/Desktop/ProjectTVRemote/power-button.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.power_button.setIcon(icon)
         self.power_button.setIconSize(QtCore.QSize(22, 22))
         self.power_button.setObjectName("power_button")
@@ -136,7 +139,7 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "TVRemote"))
+        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.volume_label.setText(_translate("Dialog", "<html><head/><body><p><span style=\" font-size:10pt;\">Volume</span></p></body></html>"))
         self.volume_up_button.setText(_translate("Dialog", "+"))
         self.channel_label.setText(_translate("Dialog", "<html><head/><body><p><span style=\" font-size:10pt;\">Channel</span></p></body></html>"))
