@@ -45,7 +45,7 @@ class Ui_Dialog(object):
         self.power_button.setGeometry(QtCore.QRect(20, 210, 31, 31))
         self.power_button.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../OneDrive/Desktop/ProjectTVRemote/power-button.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("power-button.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.power_button.setIcon(icon)
         self.power_button.setIconSize(QtCore.QSize(22, 22))
         self.power_button.setObjectName("power_button")
@@ -136,7 +136,7 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        Dialog.setWindowTitle(_translate("Dialog", "TVRemote"))
         self.volume_label.setText(_translate("Dialog", "<html><head/><body><p><span style=\" font-size:10pt;\">Volume</span></p></body></html>"))
         self.volume_up_button.setText(_translate("Dialog", "+"))
         self.channel_label.setText(_translate("Dialog", "<html><head/><body><p><span style=\" font-size:10pt;\">Channel</span></p></body></html>"))
