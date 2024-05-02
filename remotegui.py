@@ -141,7 +141,7 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        Dialog.setWindowTitle(_translate("Dialog", "TVRemote"))
         self.volume_label.setText(_translate("Dialog", "<html><head/><body><p><span style=\" font-size:10pt;\">Volume</span></p></body></html>"))
         self.volume_up_button.setText(_translate("Dialog", "+"))
         self.channel_label.setText(_translate("Dialog", "<html><head/><body><p><span style=\" font-size:10pt;\">Channel</span></p></body></html>"))
