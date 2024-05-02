@@ -18,7 +18,6 @@ class Logic(QMainWindow, Ui_Dialog):
 
         self.power_button.clicked.connect(lambda: self.power())
 
-
     def power(self):
         """
         Turns on and off the TV depending on its initial status

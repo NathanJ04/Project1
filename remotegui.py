@@ -15,9 +15,6 @@ class Ui_Dialog(object):
         Dialog.resize(350, 530)
         Dialog.setMinimumSize(QtCore.QSize(350, 530))
         Dialog.setMaximumSize(QtCore.QSize(350, 530))
-        self.screen_tv = QtWidgets.QGraphicsView(parent=Dialog)
-        self.screen_tv.setGeometry(QtCore.QRect(30, 20, 291, 131))
-        self.screen_tv.setObjectName("screen_tv")
         self.volume_slider = QtWidgets.QSlider(parent=Dialog)
         self.volume_slider.setEnabled(False)
         self.volume_slider.setGeometry(QtCore.QRect(50, 160, 251, 31))
@@ -132,10 +129,15 @@ class Ui_Dialog(object):
         self.channel_select_label.setScaledContents(False)
         self.channel_select_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.channel_select_label.setObjectName("channel_select_label")
+        self.tv_screen = QtWidgets.QLabel(parent=Dialog)
+        self.tv_screen.setGeometry(QtCore.QRect(40, 20, 271, 131))
+        self.tv_screen.setText("")
+        self.tv_screen.setPixmap(QtGui.QPixmap("off_screen.jpg"))
+        self.tv_screen.setScaledContents(True)
+        self.tv_screen.setObjectName("tv_screen")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
-        Dialog.setTabOrder(self.screen_tv, self.volume_slider)
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
