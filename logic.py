@@ -3,21 +3,31 @@ from remotegui import *
 
 
 class Logic(QMainWindow, Ui_Dialog):
+    """
+    Class that holds all functions of the TV remote
+    """
     MIN_VOLUME: int = 0
     MAX_VOLUME: int = 10
     MIN_CHANNEL: int = 1
     MAX_CHANNEL: int = 5
     FAV_CHANNEL: int = 1
-    CHANNEL_LIST = ["netflix_channel.jpg", "hulu_channel.jpg", "disneyplus_channel.jpg",
+    CHANNEL_LIST: list = ["netflix_channel.jpg", "hulu_channel.jpg", "disneyplus_channel.jpg",
                     "primevideo_channel.jpg", "news_channel.jpg"]
 
     def __init__(self, status=False, muted=False, volume=MIN_VOLUME, channel=MIN_CHANNEL):
+        """
+        Function that initiates the start values and calls each button function when clicked
+        :param status:
+        :param muted:
+        :param volume:
+        :param channel:
+        """
         super().__init__()
         self.setupUi(self)
-        self.__status = status
-        self.__muted = muted
-        self.__volume = volume
-        self.__channel = channel
+        self.__status: bool = status
+        self.__muted: bool = muted
+        self.__volume: int = volume
+        self.__channel: int = channel
 
 #       POWER BUTTON
         self.power_button.clicked.connect(lambda: self.power())
@@ -119,7 +129,7 @@ class Logic(QMainWindow, Ui_Dialog):
                 self.__muted = False
             self.volume_slider.setSliderPosition(self.__volume)
 
-    def set_favorite(self, value):
+    def set_favorite(self, value: int):
         """
         When Set is clicked it changes the favorite channel to the current channel.
         When Go is clicked it changes the current channel to the favorite channel.
